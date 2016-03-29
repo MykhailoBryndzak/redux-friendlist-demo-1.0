@@ -6,7 +6,8 @@ import * as types from '../constants/ActionTypes';
 export function addNews(name) {
     return {
         type: types.ADD_NEWS,
-        name
+        name,
+        text
     }
 }
 

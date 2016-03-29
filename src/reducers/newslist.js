@@ -14,15 +14,24 @@ const initialState = {
     newsById: {
         1: {
             id: 1,
-            name: 'ATO (terror)'
+            name: 'ATO (terror)',
+            text: 'Roman Poncet returns to' +
+            ' Figure with another batch of deadly efficient tools featuring ' +
+            'four productions in his stripped-back signature style'
         },
         2: {
             id: 2,
-            name: 'Redux (about)'
+            name: 'Redux (about)',
+            text: 'Roman Poncet returns to' +
+            ' Figure with another batch of deadly efficient tools featuring ' +
+            'four productions in his stripped-back signature style'
         },
         3: {
             id: 3,
-            name: 'React (info)'
+            name: 'React (info)',
+            text: 'Roman Poncet returns to' +
+            ' Figure with another batch of deadly efficient tools featuring ' +
+            'four productions in his stripped-back signature style'
         }
     }
 
@@ -40,7 +49,8 @@ export default function news (state = initialState, action)
                     ...state.newsById,
                     [newId]: {
                         id: newId,
-                        name: action.name
+                        name: action.name,
+                        text: action.text
                     }
                 }
             }
