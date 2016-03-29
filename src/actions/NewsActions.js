@@ -3,12 +3,10 @@
  */
 import * as types from '../constants/ActionTypes';
 
-export function addNews(name, date, text) {
+export function addNews(name) {
     return {
         type: types.ADD_NEWS,
-        name,
-        date,
-        text
+        name
     }
 }
 
@@ -19,7 +17,7 @@ export function deleteNews(id) {
     }
 }
 
-export function starNews(id){
+export function starNews(id) {
     return {
         type: types.STAR_NEWS,
         id

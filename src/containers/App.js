@@ -5,21 +5,27 @@ import { Provider } from 'react-redux';
 import { createStore, renderDevTools } from '../store_enhancers/devTools';
 
 import FriendListApp from './FriendListApp';
+import NewsListApp from './NewsListApp';
 import * as reducers from '../reducers';
 
 const reducer = combineReducers(reducers);
 const store = createStore(reducer);
 
 export default class App extends Component {
-  render() {
-    return (
-      <div>
-        <Provider store={store}>
-          {() => <FriendListApp /> }
-        </Provider>
+    render() {
+        return (
+            <div>
+                <Provider store={store}>
+                    {() => <FriendListApp /> }
+                </Provider>
 
-        {renderDevTools(store)}
-      </div>
-    );
-  }
+                <Provider store={store}>
+                    {() => <NewsListApp /> }
+                </Provider>
+
+
+                {renderDevTools(store)}
+            </div>
+        );
+    }
 }
