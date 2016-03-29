@@ -19,7 +19,7 @@ export default class NewsListItem extends Component {
             <li className={styles.NewsListItem}>
                 <div className={styles.newsInfos}>
                     <div><span>{this.props.name}</span></div>
-
+                    <div>{this.props.text}</div>
                 </div>
 
                 <div className={styles.newsActions}>

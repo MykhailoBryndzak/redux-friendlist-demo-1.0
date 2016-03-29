@@ -21,6 +21,7 @@ export default class NewsList extends Component {
                                 key={news.id}
                                 id={news.id}
                                 name={news.name}
+                                text={news.text}
                                 starred={news.starred}
                                 {...this.props.actions}/>
                         );

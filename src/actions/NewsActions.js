@@ -3,7 +3,7 @@
  */
 import * as types from '../constants/ActionTypes';
 
-export function addNews(name) {
+export function addNews(name, text) {
     return {
         type: types.ADD_NEWS,
         name,

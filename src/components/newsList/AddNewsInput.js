@@ -19,19 +19,22 @@ export default class AddNewsInput extends Component {
                     className={classnames('form-control', styles.AddNewsInput)}
                     placeholder="Type the name of a friend"
                     value={this.state.name}
-                    onChange={this.handleChange.bind(this.name)}
-                    onKeyDown={this.handleSubmit.bind(this)}/>
+                    onChange={this.handleChange.bind(this.state.name)}
+                />
+
                 <textarea
                     type="text"
                     autofocus="true"
                     className={classnames('form-control', styles.AddNewsInput)}
                     placeholder="Description news..."
                     value={this.state.text}
-                    onChange={this.handleChange.bind(this.text)}
-                    onKeyDown={this.handleSubmit.bind(this)}
+                    onChange={this.handleChange.bind(this.state.text)}
                 />
 
-                <button className={`btn btn-success ${styles.btnAction}`}> Add </button>
+                <button
+                    className={`btn btn-success ${styles.btnAction}`}
+                    onClick={() => this.handleSubmit(e)}> Add
+                </button>
             </div>
         );
     }
@@ -55,12 +58,8 @@ export default class AddNewsInput extends Component {
         const name = e.target.value.trim();
         const text = e.target.value.trim();
 
-        if (e.which === 13) {
-            this.props.addNews(name);
-            this.props.addNews(text);
-            this.setState({name: ''});
-            this.setState({text: ''});
-
-        }
+        this.props.addNews(name);
+        this.props.addNews(text);
     }
+
 }
