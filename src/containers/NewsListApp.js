@@ -10,7 +10,7 @@ import * as NewsAction from '../actions/NewsActions';
 import { NewsList, AddNewsInput } from '../components';
 
 @connect(state => ({
-    newslist: state.newslist
+    newslist: state.newsList
 }))
 export default class NewsListApp extends Component {
 

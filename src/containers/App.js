@@ -6,6 +6,7 @@ import { createStore, renderDevTools } from '../store_enhancers/devTools';
 
 import FriendListApp from './FriendListApp';
 import NewsListApp from './NewsListApp';
+import CommentListApp from './CommentListApp';
 import * as reducers from '../reducers';
 
 const reducer = combineReducers(reducers);
@@ -23,6 +24,9 @@ export default class App extends Component {
                     {() => <NewsListApp /> }
                 </Provider>
 
+                <Provider store={store}>
+                    {() => <CommentListApp /> }
+                </Provider>
 
                 {renderDevTools(store)}
             </div>

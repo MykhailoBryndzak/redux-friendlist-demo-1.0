@@ -7,7 +7,7 @@ import * as FriendsActions from '../actions/FriendsActions';
 import { FriendList, AddFriendInput } from '../components';
 
 @connect(state => ({
-    friendlist: state.friendlist
+    friendlist: state.friendList
 }))
 export default class FriendListApp extends Component {
 
