@@ -10,34 +10,41 @@ export default class AddNewsInput extends Component {
         addNews: PropTypes.func.isRequired
     }
 
+    myTarget = {
+        name1: '',
+        text1: ''
+    }
+
     render() {
         return (
             <div>
                 <input
                     type="text"
+                    name="name"
                     autofocus="true"
                     className={classnames('form-control', styles.AddNewsInput)}
                     placeholder="Type the name of a friend"
-                    value={this.state.name}
-                    onChange={this.handleChange.bind(this.state.name)}
+                    onChange={this.handleChange.bind(this)}
                 />
 
                 <textarea
                     type="text"
+                    name="text"
                     autofocus="true"
                     className={classnames('form-control', styles.AddNewsInput)}
                     placeholder="Description news..."
-                    value={this.state.text}
-                    onChange={this.handleChange.bind(this.state.text)}
+                    onChange={this.handleChange.bind(this)}
                 />
 
                 <button
                     className={`btn btn-success ${styles.btnAction}`}
-                    onClick={() => this.handleSubmit(e)}> Add
+                    onClick={() => this.handleSubmit()}
+                >Add
                 </button>
             </div>
         );
     }
+
 
     constructor(props, context) {
         super(props, context);
@@ -48,18 +55,26 @@ export default class AddNewsInput extends Component {
     }
 
     handleChange(e) {
-        this.setState({
-            name: e.target.value,
-            text: e.target.value
-        });
+        if(e.target.name == 'name'){
+            this.setState({
+                name: e.target.value,
+            });
+            this.myTarget.name1 = e.target.value;
+        } else if(e.target.name == 'text') {
+            this.setState({
+                text: e.target.value
+            });
+            this.myTarget.text1 = e.target.value;
+        }
+
     }
 
-    handleSubmit(e) {
-        const name = e.target.value.trim();
-        const text = e.target.value.trim();
+    handleSubmit() {
+        const name = this.myTarget.name1;
+        const text = this.myTarget.text1;
 
-        this.props.addNews(name);
-        this.props.addNews(text);
+        this.props.addNews(name, text)
+
     }
 
 }
