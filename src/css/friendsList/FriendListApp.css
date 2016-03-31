@@ -3,6 +3,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: auto !important;
+
 }
 
 :local(.friendListApp) {

@@ -4,3 +4,6 @@
   border-left: 0;
   border-right: 0;
 }
+:local(.btnAction) {
+  margin-left: 78%;
+}

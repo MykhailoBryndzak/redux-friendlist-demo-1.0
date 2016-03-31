@@ -18,20 +18,21 @@ export default class CommentListItem extends Component {
     render() {
         return (
             <li className={styles.commentListItem}>
-                <div className={styles.commentListItem}>
-                    <div><span>{this.props.nameComment}</span></div>
+                <div className={styles.commentInfo}>
+                    <div><p><h4>{this.props.nameComment}</h4></p></div>
                     <div>{this.props.textComment}</div>
                 </div>
 
-                <div className={styles.commentListItem}>
+                <div className={styles.commentActions}>
                     <button className={`btn btn-default ${styles.btnAction}`} onClick={() => this.props.starComment(this.props.id)}>
                         <i className={calssnames('fa', {'fa-star': this.props.starred }, {'fa-star-o': !this.props.starred })}/>
                     </button>
 
-                    <button className={`btn btn-default ${styles.btnAction}`} onClick={ () => this.props.deleteComments(this.props.id)}>
+                    <button className={`btn btn-default ${styles.btnAction}`} onClick={ () => this.props.deleteComment(this.props.id)}>
                         <i className="fa fa-trash"/>
                     </button>
                 </div>
+                <br />
             </li>
         );
     }

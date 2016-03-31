@@ -10,7 +10,7 @@ import mapValues from 'lodash/object/mapValues';
 //var time = new Date().toJSON().slice(0, 10);
 
 const initialState = {
-    news: [1, 2, 3],
+    news: [0,1, 2, 3],
     newsById: {
         1: {
             id: 1,
@@ -36,8 +36,7 @@ const initialState = {
     }
 
 };
-export default function news (state = initialState, action)
-{
+export default function news (state = initialState, action){
     switch (action.type) {
 
         case types.ADD_NEWS:

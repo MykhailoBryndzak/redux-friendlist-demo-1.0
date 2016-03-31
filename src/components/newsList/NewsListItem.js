@@ -18,7 +18,7 @@ export default class NewsListItem extends Component {
         return (
             <li className={styles.NewsListItem}>
                 <div className={styles.newsInfos}>
-                    <div><span>{this.props.name}</span></div>
+                    <div><p><span>{this.props.name}</span></p></div>
                     <div>{this.props.text}</div>
                 </div>
 
@@ -31,6 +31,7 @@ export default class NewsListItem extends Component {
                         <i className="fa fa-trash"/>
                     </button>
                 </div>
+                <br />
             </li>
         );
     }

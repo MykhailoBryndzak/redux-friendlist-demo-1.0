@@ -3,8 +3,10 @@ import omit from 'lodash/object/omit';
 import assign from 'lodash/object/assign';
 import mapValues from 'lodash/object/mapValues';
 
+
+
 const initialState = {
-    friends: [1, 2, 3],
+    friends: [0,1, 2, 3],
     friendsById: {
         1: {
             id: 1,
